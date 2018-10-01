@@ -1,0 +1,11 @@
+
+<a href="#" class="list-group-item list-group-item-action clearfix"
+   (click)="onSelected()">
+  <div class="float-left">
+    <h4>{{recipe.name}}</h4>
+     <p>{{recipe.description}}</p>
+  </div>
+  <span class="float-rigth">
+    <img [src]="recipe.imagePath" alt="" class="img-fluid" width= "80px">
+  </span>
+</a>
