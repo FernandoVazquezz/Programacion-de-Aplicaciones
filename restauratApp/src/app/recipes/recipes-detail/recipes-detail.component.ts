@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe.model';
+
 @Component({
   selector: 'app-recipes-detail',
   templateUrl: './recipes-detail.component.html',
@@ -8,9 +9,11 @@ import { Recipe } from '../recipe.model';
 export class RecipesDetailComponent implements OnInit {
 
   @Input() recipe: Recipe;
+
   constructor() { }
 
   ngOnInit() {
+    //console.log(this.recipe)
   }
 
 }
