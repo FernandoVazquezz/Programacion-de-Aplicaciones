@@ -22,7 +22,7 @@ export class IngredientsService {
      
       addIngredients(auxIngredients: Ingredient[]){
         for(const i of auxIngredients){
-            var auxAmount = this.ingredients.find(ingrediente => ingrediente.name === i.name);
+            var auxAmount = this.ingredients.find(ingredient => ingredient.name === i.name);
             if(auxAmount){
                 auxAmount.amount += i.amount;
             }else{
