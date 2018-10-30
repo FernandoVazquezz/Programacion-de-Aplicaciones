@@ -17,10 +17,12 @@ export class ShoppingEditComponent implements OnInit {
   editedItem: Ingredient;
   @ViewChild('f')slForm: NgForm;
   editMode = false;
+  indexExitedItem: number;
   constructor(private ingredientsService: IngredientsService) { }
 
   ngOnInit() {
     this.subscription = this.ingredientsService.startedEditing.subscribe((index: number)=>{
+      this.indexExitedItem = index;
       this.editedItem = this.ingredientsService.getIngredient(index);
       this.editMode = true;
       this.slForm.setValue({
@@ -35,6 +37,10 @@ export class ShoppingEditComponent implements OnInit {
     //const amount = this.amountInputRef.nativeElement.value;
     const value = form.value;
     const newIngredient = new Ingredient(value.name, value.amount);
-    this.ingredientsService.addIngredient(newIngredient);
+    if(this.editMode){
+      this.ingredientsService.updateIngredient(this.indexExitedItem,newIngredient)
+    }else{
+      this.ingredientsService.addIngredient(newIngredient);
+    }
   }
 } 
