@@ -88,6 +88,5 @@ export class RecipesEditComponent implements OnInit {
     this.slForm.reset();
     this.editMode = false;
   }
-
 }
 
