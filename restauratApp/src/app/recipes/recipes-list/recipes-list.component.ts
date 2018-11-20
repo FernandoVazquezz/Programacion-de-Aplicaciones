@@ -26,9 +26,4 @@ export class RecipesListComponent implements OnInit {
     })
   }
 
-
-  ngOnDestroy(){
-    this.sure.unsubscribe();
-  }
-
 }
