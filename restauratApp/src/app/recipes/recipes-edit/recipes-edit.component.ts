@@ -50,15 +50,14 @@ export class RecipesEditComponent implements OnInit {
           );
         }
       }
-
-      this.recipeForm = new FormGroup({
-        'name' : new FormControl(recipeName,Validators.required),
-        'imagePath' : new FormControl(recipeImagePath,Validators.required),
-        'description' : new FormControl(recipeDescription,Validators.required),
-        'ingredients' : ingredients
-      });
-
     }
+    
+    this.recipeForm = new FormGroup({
+      'name' : new FormControl(recipeName,Validators.required),
+      'imagePath' : new FormControl(recipeImagePath,Validators.required),
+      'description' : new FormControl(recipeDescription,Validators.required),
+      'ingredients' : ingredients
+    });
   }
   onAddIngredient(){
     (<FormArray>this.recipeForm.get('ingredients')).push(
@@ -80,6 +79,7 @@ export class RecipesEditComponent implements OnInit {
       this.onCancel();
     }else{
       this.recipeService.addRecipe(newRecipe);
+      this.onCancel();
     }
   }
   onDeleteIngredient(index:number){
