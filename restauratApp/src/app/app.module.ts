@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
 import { RecipeService } from './services/recipe.service';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,15 @@ import { RecipeService } from './services/recipe.service';
     HeaderComponent,
     RecipesComponent,
     ShoppingListComponent,
+    ShoppingEditComponent,
+    RecipesComponent,
     RecipesDetailComponent,
     RecipesListComponent,
     RecipesItemComponent,
     ShoppingEditComponent,
     RecipeStartComponent,
-    RecipesEditComponent
+    RecipesEditComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
